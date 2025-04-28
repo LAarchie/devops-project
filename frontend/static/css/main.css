@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+input, button {
+    padding: 8px;
+    margin:10px;
+    border-radius: 50%;
+}
