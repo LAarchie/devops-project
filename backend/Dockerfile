@@ -4,25 +4,23 @@ FROM python:3.13.3-slim
 RUN groupadd --gid 1000 app && \
     useradd --create-home --gid 1000 --uid 1000 app
 
-# Create project directory in the container 
-RUN mkdir -p /home/app/src
 
 # Set working directory
-WORKDIR /home/app/src
+WORKDIR /app
 
 COPY requirements.txt .
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the application code
-COPY . .
-
 # Change the ownership to the app user
-RUN chown -R app:app /home/app/src
+RUN chown -R app:app /app
 
 # Switch to the non-root app user
 USER app
+
+# Copy the application code
+COPY . .
 
 # Expose port used by the application
 EXPOSE 5000
