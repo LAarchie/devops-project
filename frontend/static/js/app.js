@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('/api/hello')
+    //fetch('/api/hello')
+    fetch('http://localhost:5000/api/hello')
         .then(res => res.json())
         .then(data => {
             document.getElementById('message').innerText = data.message;
@@ -10,7 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 })
 
-fetch('/api/health')
+
+//fetch('/api/health')
+fetch('http://localhost:5000/api/health')
     .then(res => res.json())
     .then(data => console.log('Backend status', data.status))
     .catch(err => console.error('Health check failed', err));
@@ -24,7 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const logMessage = { message: 'User clicked the log button' };
 
 
-            fetch('/api/log-test', {
+            //fetch('/api/log-test', {
+            fetch('http://localhost:5000/api/log-test', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(logMessage)
@@ -34,4 +38,5 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(err => console.error('Log failed', err))
         })
     }
+
 });
