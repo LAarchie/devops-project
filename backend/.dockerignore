@@ -1,11 +1,11 @@
 #Python
 __pycache__/
+.pytest_cache/
 *.env
 *.venv
 .env
 .envrc
 venv/
-flaskDOvenv/
 *.pyc
 *.pyo
 *.pyd
